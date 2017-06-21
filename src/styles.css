@@ -1,1 +1,89 @@
-/* You can add global styles to this file, and also import other style files */
+
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,700,600");
+
+body {
+    max-width: 800px;
+    margin: 20px auto;
+    font-family: "Open Sans", Verdana;
+    font-size: 11px;
+    border: 1px solid #bdbebf;
+}
+
+/* 
+    Main Container classes
+*/
+.divHeader {
+    padding: 20px;
+    background-color: #333A56;
+    color: #E8E8E8;
+    height: 40px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.divMain {
+    padding: 20px;
+    background-color: #E8E8E8;
+}
+
+.divFooter {
+    padding: 10px;
+    background-color: #52658F;
+    color: #E8E8E8;
+    font-weight: bold;
+    text-align: right;
+}
+
+
+/*
+    Table classes
+*/
+.tblGeneral {
+    border-collapse: collapse;
+    background-color: #d6d7d9;
+    border: 1px solid #bdbebf;
+    width: 220px;
+}
+
+.tblGeneral td {
+    padding: 6px;
+}
+
+.tblHeaderCell {
+    background-color: #52658F;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.tblGeneral td, tblGeneral th {
+    text-align: left;
+}
+
+.tblSubmitCell {
+    padding-top: 0px !important;
+    text-align: right !important;
+}
+
+.tblInputSummary {
+    width: 500px;
+}
+
+/* 
+    Specific Controls 
+*/
+#tblAllModels {
+    width: 500px;
+}
+
+#tblAllModels  tr:nth-child(even) {
+    background-color: whitesmoke;
+}
+
+@media screen and (max-width: 840px){
+
+    body {
+        margin: 20px;
+    }
+
+}

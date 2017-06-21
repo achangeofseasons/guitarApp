@@ -1,0 +1,45 @@
+<div class="divMain">
+  <table class="tblGeneral">
+    <tr>
+        <td class="tblHeaderCell" colspan="2">Add Guitar Model</td>
+    </tr>
+    <tr>
+        <td>Brand</td>
+        <td>
+          <select id="ddBrand" [(ngModel)]="brand">
+            <option [value]="0">-- Select a brand --</option>
+            <option *ngFor="let brand of guitarBrands" [value]="brand.guitarBrandId">{{brand.name}}</option>
+          </select>
+      </td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td><input [(ngModel)] = "name"></td>
+    </tr>
+    <tr>
+        <td>Price</td>
+        <td><input [(ngModel)] = "price"></td>
+    </tr>
+    <tr>
+        <td colspan="2"  class="tblSubmitCell">
+          <button (click)="addGuitarModel(name, price, brand)">Add</button>
+        </td>
+    </tr>
+  </table>
+  <br>
+  <br>
+  <table class="tblGeneral" id="tblAllModels">
+    <tr>
+        <td class="tblHeaderCell">Id</td>
+        <td class="tblHeaderCell">Brand</td>
+        <td class="tblHeaderCell">Model</td>
+        <td class="tblHeaderCell" style="text-align: center;">Price</td>
+    </tr>
+    <tr *ngFor="let model of guitarModelBrands">
+        <td>{{model.guitarModelId}}</td>
+        <td>{{model.brandName}}</td>
+        <td>{{model.modelName}}</td>
+        <td style="text-align: right;">{{model.modelPrice | currency:'USD':true:'1.2-2'}}</td>
+    </tr>
+</table>
+</div>
