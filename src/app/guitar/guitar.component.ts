@@ -30,7 +30,12 @@ export class GuitarComponent implements OnInit {
   price: string;
 
   constructor(private _guitar: GuitarService) { 
+    this.getBrands();
+    this.getAllModels();
+  }
 
+getBrands()
+{
     this._guitar.getGuitarBrands()
     .subscribe(
       data => { 
@@ -39,7 +44,9 @@ export class GuitarComponent implements OnInit {
       error => alert(error),
       () => console.log("getGuitarBrands complete")
     );
-
+}
+getAllModels()
+{
     this._guitar.getAllGuitarModels()
     .subscribe(
       data => { 
@@ -48,11 +55,11 @@ export class GuitarComponent implements OnInit {
       error => alert(error),
       () => console.log("getAllGuitarModels complete")
     );
-
-  }
+}
 
  addGuitarModel(name, price, brand) {
     this._guitar.addGuitarModel(name, price, brand)
+    .finally(() => this.getAllModels())
     .subscribe(
       data => JSON.stringify(data),
       error => alert(error),
@@ -63,11 +70,23 @@ export class GuitarComponent implements OnInit {
     this.brand = '0';
     this.name = ''
     this.price = '';
+  }
+
+   deleteGuitarModel(guitarModelId) {
+    
+    this._guitar.deleteGuitarModel(guitarModelId)
+    .finally(() => this.getAllModels())
+    .subscribe(
+      data => JSON.stringify(data),
+      error => alert(error),
+      () => console.log("deleteGuitarModel complete")
+    );
 
   }
 
   ngOnInit() {
     this.brand = '0';
+
   }
 
 }

@@ -33,13 +33,15 @@
         <td class="tblHeaderCell">Id</td>
         <td class="tblHeaderCell">Brand</td>
         <td class="tblHeaderCell">Model</td>
-        <td class="tblHeaderCell" style="text-align: center;">Price</td>
+        <td class="tblHeaderCell">Price</td>
+        <td class="tblHeaderCell"></td>
     </tr>
     <tr *ngFor="let model of guitarModelBrands">
         <td>{{model.guitarModelId}}</td>
         <td>{{model.brandName}}</td>
         <td>{{model.modelName}}</td>
-        <td style="text-align: right;">{{model.modelPrice | currency:'USD':true:'1.2-2'}}</td>
+        <td>{{model.modelPrice | currency:'USD':true:'1.2-2'}}</td>
+        <td class="tblDeleteCell"><button (click)="deleteGuitarModel(model.guitarModelId)">Delete</button></td>
     </tr>
 </table>
 </div>

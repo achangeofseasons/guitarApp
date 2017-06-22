@@ -9,6 +9,11 @@ body {
     border: 1px solid #bdbebf;
 }
 
+button {
+    font-family: "Open Sans", Verdana;
+    font-size: 11px;
+}
+
 /* 
     Main Container classes
 */
@@ -60,6 +65,9 @@ body {
     text-align: left;
 }
 
+.tblDeleteCell {
+    width: 50px;
+}
 .tblSubmitCell {
     padding-top: 0px !important;
     text-align: right !important;

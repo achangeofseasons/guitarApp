@@ -23,7 +23,11 @@ export class GuitarService {
     var header = new Headers();
     header.append('Content-Type', 'application/json');
     return this._http.post('http://localhost:62759/api/guitar/newmodel', json, { headers: header }).map(res => res.json());
-
   }
 
+  deleteGuitarModel(theid) {
+
+    var header = new Headers();
+    return this._http.delete('http://localhost:62759/api/guitar/deletemodel/' + theid.toString());
+  }
 }
