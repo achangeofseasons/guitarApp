@@ -95,3 +95,18 @@ button {
     }
 
 }
+
+@media screen and (max-width: 590px){
+
+    #tblAllModels {
+        width: 100%;
+    }
+
+}
+@media screen and (max-width: 480px){
+
+    .tblGeneral {
+        width: 100%;
+    }
+
+}
